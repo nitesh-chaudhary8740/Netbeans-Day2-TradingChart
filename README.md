@@ -1,16 +1,37 @@
-# React + Vite
+# 📈 Professional Trading Chart Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, responsive financial charting application built with **React 19**, **Vite**, and **Lightweight Charts**. This project was developed as part of a technical internship exercise to demonstrate advanced DOM manipulation, real-time data visualization, and technical analysis integration.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Dynamic Candlestick Rendering**: Utilizes a Canvas-based engine for buttery-smooth zooming and panning.
+* **Technical Indicators**: Integrated support for:
+    * **SMA** (Simple Moving Average)
+    * **EMA** (Exponential Moving Average)
+    * **VWAP** (Volume Weighted Average Price)
+    * **Bollinger Bands** (Upper, Lower, and Basis lines)
+* **Responsive Design**: Automatically recalibrates `clientWidth` on window resize using optimized event listeners.
+* **Interactive HUD**: Real-time Heads-Up Display showing Open, High, Low, and Close (OHLC) values on crosshair hover.
+* **Smart Cleanup**: Implements strict memory management to prevent memory leaks and duplicate chart instances in React Strict Mode.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+| Technology | Purpose |
+| :--- | :--- |
+| **React 19** | UI Framework & Component Logic |
+| **Lightweight Charts** | High-performance Canvas Charting |
+| **TechnicalIndicators** | Financial math & formula logic |
+| **Tailwind CSS** | Modern Slate-themed styling |
+| **Vite** | Lightning-fast development build tool |
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* `src/components/TradingChart.jsx` - The core charting engine and UI.
+* `src/utils/indicators.js` - Technical analysis logic and data mapping.
+* `src/utils/generateMockTradingData.js` - Simulated market data generator with volatility logic.
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/nitesh-chaudhary8740/Netbeans-Day2-TradingChart.git](https://github.com/nitesh-chaudhary8740/Netbeans-Day2-TradingChart.git)
