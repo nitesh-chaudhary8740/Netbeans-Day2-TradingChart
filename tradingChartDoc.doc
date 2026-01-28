@@ -1,0 +1,87 @@
+This block is the **Configuration Object**. It defines the "look and feel" of the global chart canvas before any data is even drawn. Think of it as setting up the stage before the actors (the candles) come out.
+
+Here is the breakdown of every property and what else you can do with them.
+
+---
+
+## 1. Dimensions: `width` & `height`
+
+* **What they do:** Set the fixed pixel size of the Canvas.
+* **Values:** Any positive integer.
+* **Mastery Tip:** Always use `chartContainerRef.current.clientWidth` for the width so it fills the parent `div` perfectly.
+
+---
+
+## 2. `layout`: The Aesthetic Shell
+
+This controls the global styling of the chart area.
+
+| Property | Value in your code | Possible Values / Options |
+| --- | --- | --- |
+| **`background`** | `{ type: ColorType.Solid, color: '#0f172a' }` | **Type:** `Solid` or `VerticalGradient`. **Color:** Hex, RGB, or CSS color names. |
+| **`textColor`** | `'#94a3b8'` | Any color string. Controls axis numbers and labels. |
+| **`fontSize`** | *Not set (Default: 11)* | Number (e.g., `14`). |
+| **`fontFamily`** | *Not set (Default: Sans)* | Any valid CSS font string (e.g., `'Roboto, sans-serif'`). |
+
+---
+
+## 3. `grid`: The Alignment Lines
+
+These are the horizontal and vertical lines that help the user eye-ball the price and time.
+
+| Property | Purpose | Options |
+| --- | --- | --- |
+| **`vertLines`** | Vertical lines (Time) | `{ color: string, style: LineStyle, visible: boolean }` |
+| **`horzLines`** | Horizontal lines (Price) | Same as above. |
+
+**`LineStyle` Options:**
+
+* `0`: Solid (Default)
+* `1`: Dotted
+* `2`: Dashed
+* `3`: Large Dashed
+
+---
+
+## 4. `timeScale`: The X-Axis (Bottom)
+
+This is one of the most powerful parts of the config. It manages how time is displayed.
+
+* **`borderColor`**: The color of the line separating the chart from the time labels.
+* **`timeVisible`**: (Boolean) If `true`, it shows the clock time (HH:MM). If `false`, it might only show the date.
+* **`secondsVisible`**: (Boolean) Usually set to `false` for 1m charts to keep the UI clean.
+* **`rightOffset`**: (Number) How much empty space to leave on the right side of the last candle (useful for "Price Line" space).
+* **`barSpacing`**: (Number) The width of each candle. Increasing this "zooms in" the chart.
+
+---
+
+## 5. `crosshair`: The Tracking Tool
+
+(You didn't include it in your snippet, but it's in your main code)
+
+* **`mode`**:
+* `CrosshairMode.Normal`: Lines follow the mouse freely.
+* `CrosshairMode.Magnet`: Lines "snap" to the nearest Open/High/Low/Close of a candle.
+
+
+* **`vertLine` / `horzLine**`: You can style these lines separately (e.g., make them red or dashed).
+
+---
+
+### 🎨 Pro-Level Customization Example
+
+If you wanted a **"Gradient Background"** (very common in modern trading apps), you would change the `layout` to this:
+
+```javascript
+layout: {
+    background: {
+        type: ColorType.VerticalGradient,
+        topColor: '#1e293b',
+        bottomColor: '#0f172a',
+    },
+    textColor: '#ffffff',
+}
+
+```
+
+**Would you like to see how to add the `priceScale` configuration?** That's the part that controls the Y-Axis (the right side) and allows you to add currency symbols like **₹** or **$**.
